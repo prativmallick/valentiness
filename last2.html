@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELL YEAH!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #c7b0f2; /* Lavender background */
+            font-family: 'Emilys Candy', sans-serif;
+            text-align: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70vw;
+            background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            animation: fadeIn 1s ease-in forwards, float 1s ease-in-out infinite; /* Fade in and floating effect */
+            position: relative;
+            z-index: 1; /* Ensure the box is above the image */
+            box-shadow: 0 10px 30px rgba(122, 92, 191, 0.4); /* Lavender shadow for depth */
+        }
+
+        h1 {
+            color: #8b6ecf; /* A richer lavender shade */
+            font-size: 43px;
+            animation: bounce 1s infinite alternate; /* Adds a fun bounce animation */
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards, bounce 1s infinite alternate 1s; /* Fade in and then bounce */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between the GIFs and the main image */
+            margin-top: 40px; /* Space between the box and the image container */
+            animation: float 1s ease-in-out infinite;
+        }
+
+        .gif-container {
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards 1.5s; /* Fade in after the text */
+        }
+
+        .gif-container img {
+            width: 150px; /* Adjust the size of the GIFs */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .ima {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:10px ; 
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards 1.5s; /* Fade in after the text */
+        }
+
+        .ima img {
+            width: 150px; /* Adjust the size of the image */
+            height: auto;
+            border-radius: 10px;
+           
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Floating animation for the box */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>HELLL YEAHHHH YOU FUCKING SAID YESSS <br>I LOVE YOU!!!</h1>
+    </div>
+    <div class="image-container">
+        <div class="gif-container">
+            <img src="catgif.gif" alt="GIF 1"> <!-- Replace with your first GIF -->
+        </div>
+        <div class="ima"> I LOVE YOU SO MUCH 
+
+            <img src="12nov.jpg" alt="Celebration Image"> <!-- Main image -->
+        </div>
+        <div class="gif-container">
+            <img src="catgif.gif" alt="GIF 2"> <!-- Replace with your second GIF -->
+        </div>
+    </div>
+</body>
+</html>

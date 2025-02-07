@@ -1,0 +1,124 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set up the image as a background to fill the whole screen */
+body {
+    background-color: #c7b0f2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transparent box styling */
+.box {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+    padding: 40px;
+    width: 230px; /* Fixed width */
+    height: 195px; /* Fixed height */
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    
+    transform-style: preserve-3d; /* Ensures that the flip happens in 3D space */
+    transition: transform 0.8s ease-out; /* Smooth flip transition */
+    position: relative; /* Allows for absolute positioning of inner elements */
+    perspective: 1000px; /* Adds perspective for 3D effect */
+    box-shadow: 0 10px 30px rgba(122, 92, 191, 0.4); /* Lavender shadow for depth */
+
+}
+.box.flip {
+    transform: rotateY(360deg); /* Flips the box 180 degrees */
+}
+
+/* Both the front and back faces are positioned in the same place */
+.box .front, .box .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Prevents the back content from showing while flipped */
+}
+
+/* Styling for the front face */
+.box .front {
+    display: block;
+}
+
+/* Styling for the back face */
+.box .back {
+    display: block;
+    transform: rotateY(180deg); /* Position the back face behind the front */
+}
+.idk{
+    animation: float 4s ease-in-out infinite;
+
+}
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    50% {
+        transform: translateY(-15px); /* Slightly move up */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+/* Flip the box */
+
+
+/* Styling for the content inside the box */
+.box h1 {
+    font-family: 'Emilys Candy', cursive;
+    color: #8b6ecf; /* A richer lavender shade */
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    font-family: 'Emilys Candy', cursive;
+    font-size: 26px;
+    color: #8b6ecf; /* Matching the h1 color */
+    border: 1px solid;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    border-color: #8b6ecf; /* Matching the h1 color */
+    background-color: #e6e0ff; /* A softer lavender for the button background */
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #d4c3ff; /* A slightly deeper lavender for hover */
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 6px 12px rgba(122, 92, 191, 0.3); /* Lavender shadow */
+    border-color: #d4c3ff; /* Matching hover background */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Active Effect (when clicked) */
+.button:active {
+    transform: scale(0.95); /* Slightly scale down */
+    box-shadow: 0 3px 6px rgba(122, 92, 191, 0.2); /* Softer lavender shadow */
+}
+
+.btbox {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,160 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Set up the image as a background to fill the whole screen */
+body {
+    background-color: #b19cd9; /* A slightly deeper lavender */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transparent box styling */
+.box-wrapper {
+    position: relative; /* Wrapper element for floating */
+    animation: float 3s ease-in-out infinite; /* Floating animation applied here */
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+    padding: 40px;
+    width: 230px; /* Fixed width */
+    height: 195px; /* Fixed height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d; /* Ensures that the flip happens in 3D space */
+    transition: transform 0.8s ease-out, box-shadow 0.4s ease-in-out; /* Smooth flip transition and shadow effects */
+    position: relative; /* Allows for absolute positioning of inner elements */
+    perspective: 1000px; /* Adds perspective for 3D effect */
+    box-shadow: 0 12px 24px rgba(122, 92, 191, 0.2); /* Lavender shadow */
+    transition: transform 1s ease, width 1s ease, height 1s ease, border-radius 1s ease, opacity 1s ease; /* Smooth transition */
+    transform-origin: center; /* Zoom from the center */
+}
+
+/* Floating effect applied to wrapper, not the box itself */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    50% {
+        transform: translateY(-15px); /* Slightly move up */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+.box.shake {
+    animation: shake 0.7s infinite; /* Shake animation */
+}
+
+/* Shake effect for the box */
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-2px, -2px); }
+    20% { transform: translate(2px, -2px); }
+    30% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, -2px); }
+    70% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, 2px); }
+    90% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Apply shake effect to the box */
+
+/* Fullscreen class for smooth expansion effect */
+.box.fullscreen {
+    width: 100vw; /* Make it take up full screen width */
+    height: 100vh; /* Make it take up full screen height */
+    border-radius: 0; /* Remove border radius when expanding */
+    position: fixed; /* Fix the box to the viewport */
+    top: 0;
+    left: 0;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    transition: width 1s ease, height 1s ease, border-radius 1s ease; /* Smooth transition */
+    opacity: 1; /* Keep the box visible during the expansion */
+    transform-origin: center; /* Expand from the center */
+}
+
+/* Styling for the content inside the box */
+#text {
+    font-family: 'Emilys Candy', cursive;
+    color: #8b6ecf; /* A richer lavender shade */
+    font-size: 32px; /* Adjusted font size for better fit */
+    margin: 0; /* Remove default margin */
+    transition: opacity 0.5s ease; /* Fade out the text */
+}
+
+/* Styling for the new message div */
+#new-message {
+    position: fixed;
+    top: 40%; /* Adjust position to make space for buttons */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Emilys Candy', cursive;
+    font-size: 36px;
+    color: #8b6ecf;
+    text-align: center;
+    z-index: 10; /* Ensure it appears above the expanded box */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease 1s forwards; /* Fade in after 1 second */
+}
+
+/* Container for the buttons */
+#button-container {
+    position: fixed;
+    top: 55%; /* Position below the new message */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    z-index: 10; /* Ensure buttons appear above the expanded box */
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease; /* Fade-in transition */
+}
+
+/* Styling for the "Yes" buttons */
+/* Styling for the "Yes" buttons */
+.yes-button {
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Emilys Candy', cursive;
+    font-size: 24px;
+    color: #8b6ecf;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    border: 2px solid #8b6ecf; /* Lavender border */
+}
+
+/* Hover effect for the buttons */
+.yes-button:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly more opaque on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    border-color: #6a4a9e; /* Darker lavender border on hover */
+}
+
+/* Fade-in animation for the new message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
