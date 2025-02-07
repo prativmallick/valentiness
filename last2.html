@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELL YEAH!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #c7b0f2; /* Lavender background */
+            font-family: 'Emilys Candy', sans-serif;
+            text-align: center;
+        } 
+        .all
+        
+        {  max-width: 800px;
+            width: 99%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 99%;
+            /*border: 2px solid;*/
+            padding: 5px;
+            position: relative;
+        }
+
+        .box {
+          
+position: absolute;
+z-index: 2;
+top: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 35%;
+            background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            animation: fadeIn 1s ease-in forwards, float 1s ease-in-out infinite; /* Fade in and floating effect */
+           
+            box-shadow: 0 10px 30px rgba(122, 92, 191, 0.4); /* Lavender shadow for depth */
+        }
+
+        h1 {
+            color: #8b6ecf; /* A richer lavender shade */
+            font-size:32px;
+            animation: bounce 1s infinite alternate; /* Adds a fun bounce animation */
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards, bounce 1s infinite alternate 1s; /* Fade in and then bounce */
+        }
+
+        .image-container {
+            position: absolute;
+            z-index: 1;
+            bottom: 50px;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+           
+            margin-top: 40px; /* Space between the box and the image container */
+            animation: float 1s ease-in-out infinite;
+        }
+
+        .gif-container {
+            width: 160%;
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards 1.5s; /* Fade in after the text */
+
+        }
+
+        .gif-container img {
+            width: 100%; /* Adjust the size of the GIFs */
+            height:100%;
+            border-radius: 10px;
+        }
+
+        .ima {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s ease-in forwards 1.5s; /* Fade in after the text */
+        }
+        .txt{
+            width: 190px;
+        }
+
+        .ima img {
+            width: 90%; /* Adjust the size of the image */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 0px; /* Add margin to the bottom of the image */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Floating animation for the box */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @media only screen and (max-width: 720px){
+            .box {
+          
+          position: absolute;
+          z-index: 2;
+          top: 75px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 70%;
+                      height: 35%;
+                      background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+                      padding: 20px;
+                      border-radius: 15px;
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+                      animation: fadeIn 1s ease-in forwards, float 1s ease-in-out infinite; /* Fade in and floating effect */
+                     
+                      box-shadow: 0 10px 30px rgba(122, 92, 191, 0.4); /* Lavender shadow for depth */
+                  }
+            .image-container {
+            position: absolute;
+            z-index: 1;
+            bottom: 140px;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+           
+            margin-top: 40px; /* Space between the box and the image container */
+            animation: float 1s ease-in-out infinite;
+        }
+        }
+        @media only screen and (min-width: 720px) {
+            .all
+        
+        { 
+             max-width: 800px;
+            width: 79%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 85%;
+            /*border: 2px solid;*/
+            padding: 5px;
+            position: relative;
+        }
+
+  .box {
+    position: absolute;
+z-index: 2;
+top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 45%;
+            background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque for better contrast */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            animation: fadeIn 1s ease-in forwards, float 1s ease-in-out infinite; /* Fade in and floating effect */
+           
+            box-shadow: 0 10px 30px rgba(122, 92, 191, 0.4); /* Lavender shadow for depth */
+  }
+  
+  .image-container {
+            position: absolute;
+            z-index: 1;
+            bottom: 35px;
+            width: 50%;
+            height: 20%;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+           
+            margin-top: 40px; /* Space between the box and the image container */
+            animation: float 1s ease-in-out infinite;
+        }
+        .ima img {
+            width: 50%; /* Adjust the size of the image */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 0px; /* Add margin to the bottom of the image */
+        }
+        .txt{
+            font-size: 11px;
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="all">
+    <div class="box">
+        <h1>HELLL YEAHHHH YOU FUCKING SAID YESSS <br>I LOVE YOU!!!</h1>
+    </div>
+    <div class="image-container">
+        <div class="gif-container">
+            <img src="catgif.gif" alt="GIF 1"> <!-- Replace with your first GIF -->
+        </div>
+        <div class="ima"> <div class="txt">I LOVE YOU SO MUCH </div>
+
+            <img src="121nov.jpg" alt="Celebration Image"> <!-- Main image -->
+        </div>
+        <div class="gif-container">
+            <img src="catgif.gif" alt="GIF 2"> <!-- Replace with your second GIF -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
